@@ -1,0 +1,111 @@
+@import "../../style.scss";
+
+.share {
+  @include themify($themes) {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+    margin-bottom: 20px;
+
+    .container {
+      padding: 20px;
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        input {
+          border: none;
+          outline: none;
+          padding: 20px 10px;
+          background-color: transparent;
+          width: 60%;
+          color: themed("textColor");
+        }
+        textarea {
+          color: themed("textColor");
+          border: none;
+          outline: none;
+          width: 100%;
+          padding: 10px;
+          border-radius: 1rem;
+          background-color: themed("bgSoft");
+        }
+      }
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            background: #eee;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: rgba(0, 0, 0, 0.2) 0 5px 15px;
+
+            img {
+              height: 20px;
+            }
+
+            span {
+              font-size: 12px;
+              color: #666;
+            }
+
+            &:hover {
+              box-shadow: rgba(0, 0, 0, 0.4) 0 5px 15px;
+            }
+          }
+        }
+        .right {
+          button {
+            background-image: linear-gradient(#0dccea, #0d70ea);
+            border: 0;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-family: Montserrat, sans-serif;
+            font-size: 0.9em;
+            margin: 5px;
+            padding: 10px 15px;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+          }
+          button:hover {
+            box-shadow: rgba(0, 0, 0, 0.6) 0 5px 10px;
+          }
+        }
+      }
+    }
+  }
+}

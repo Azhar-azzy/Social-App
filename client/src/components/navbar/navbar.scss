@@ -1,0 +1,141 @@
+@import "../../style.scss";
+
+.navbarExtended {
+  @include themify($themes) {
+    color: themed("textColor");
+    background: themed("bg");
+    padding: 0.3rem;
+    display: none;
+
+    .centerMenu.mobile {
+      display: flex;
+      justify-content: space-between;
+      background: themed("bgSoft");
+      padding: 0.5rem 2rem;
+      border-radius: 2rem;
+      width: 80vw;
+      margin: 0 auto;
+      a {
+        color: themed("textColor");
+      }
+      .centerIcon {
+        padding: 0.5rem;
+        border-radius: 2rem;
+      }
+      .centerIcon.active {
+        background: themed("bg");
+      }
+    }
+  }
+  @include mobile {
+    display: block !important;
+  }
+}
+
+.navbar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 50px;
+    border-bottom: 1px solid themed("border");
+    position: sticky;
+    top: 0;
+    background-color: themed("bg");
+    color: themed("textColor");
+    z-index: 999;
+
+    a {
+      color: themed("textColor");
+    }
+    .centerMenu {
+      display: flex;
+      gap: 2.5rem;
+      background: themed("bgSoft");
+      padding: 0.5rem 2rem;
+      border-radius: 2rem;
+      .centerIcon {
+        padding: 0.5rem;
+        border-radius: 2rem;
+      }
+      .centerIcon.active {
+        background: themed("bg");
+      }
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      span {
+        font-weight: bold;
+        font-size: 20px;
+        color: themed("logo");
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        padding: 5px;
+
+        input {
+          border: none;
+          width: 500px;
+          background-color: transparent;
+          color: themed("textColor");
+
+          @include mobile {
+            display: none;
+          }
+
+          @include tablet {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .centerMenu.desktop {
+      @include mobile {
+        display: none;
+      }
+      @include tablet {
+        // display: none;
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include mobile {
+        // display: none;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+
+        @include tablet {
+          // display: none;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+        }
+      }
+    }
+  }
+}
